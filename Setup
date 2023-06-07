@@ -1,5 +1,6 @@
 local mainFolder = game.Workspace.QveryStartMenu_V2
 local objectsFolder = mainFolder.Objects
 
-objectsFolder.Events.Parent = game.ReplicatedStorage   
+objectsFolder.Events.Parent = game.ReplicatedStorage
 objectsFolder.SpawnItems.Parent = game.Workspace
+objectsFolder.MainMenu.Parent = game.StarterGui
