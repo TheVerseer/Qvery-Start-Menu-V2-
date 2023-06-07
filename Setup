@@ -1,10 +1,12 @@
 local mainFolder = game.Workspace.QveryStartMenu_V2
 local objectsFolder = mainFolder.Objects
 
-warn("Loading: "..mainFolder.Name)
+warn("Loading Menu")
 
-objectsFolder.Events.Parent = game.ReplicatedStorage
-objectsFolder.SpawnItems.Parent = game.Workspace
-objectsFolder.MainMenu.Parent = game.StarterGui
+mainFolder.Config.Parent = objectsFolder.MainMenu
+objectsFolder.MainMenuEvents.Parent = game.ReplicatedStorage
+objectsFolder. MainMenuSpawnItems.Parent = game.Workspace
+objectsFolder.MainMenuServerScripts.Parent = game.ServerScriptService
+objectsFolder.MainMenuGui.Parent = game.StarterGui
 
-warn(mainFolder.Name.."Loaded!") 
+warn("Menu Loaded!") 
