@@ -5,7 +5,7 @@ warn("Loading Menu")
 
 mainFolder.Config.Parent = objectsFolder.MainMenu
 objectsFolder.MainMenuEvents.Parent = game.ReplicatedStorage
-objectsFolder. MainMenuSpawnItems.Parent = game.Workspace
+objectsFolder.MainMenuSpawnItems.Parent = game.Workspace
 objectsFolder.MainMenuServerScripts.Parent = game.ServerScriptService
 objectsFolder.MainMenuGui.Parent = game.StarterGui
 
