@@ -3,11 +3,11 @@ local objectsFolder = mainFolder.Objects
 
 warn("Loading Menu")
 
-mainFolder.Config.Parent = objectsFolder.MainMenuGui
+mainFolder.MainMenuConfig.Parent = objectsFolder.MainMenuGui
 objectsFolder.MainMenuEvents.Parent = game.ReplicatedStorage
 objectsFolder.MainMenuSpawnItems.Parent = game.Workspace
 objectsFolder.MainMenuServerScripts.Parent = game.ServerScriptService
+objectsFolder.MainMenuCharacterScripts.Parent = game.StarterPlayer.StarterCharacterScripts
 objectsFolder.MainMenuGui.Parent = game.StarterGui
-objectsFolder.PlayerDied.Parent = game.StarterPlayer.StarterCharacterScripts
 
 warn("Menu Loaded!") 
