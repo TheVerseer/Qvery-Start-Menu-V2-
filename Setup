@@ -11,17 +11,50 @@ objectsFolder.MainMenuServerScripts.Parent = game.ServerScriptService
 objectsFolder.MainMenuCharacterScripts.Parent = game.StarterPlayer.StarterCharacterScripts
 objectsFolder.MainMenuGui.Parent = game.StarterGui
 if not lighting:FindFirstChild("Atmosphere") then
-	objectsFolder.MainMenuLighting.Atmosphere.Parent = lighting
+	local a = Instance.new("Atmosphere", lighting)
+	a.Density = 0.3
+	a.Offset = 0.25
+	a.Color = Color3.fromRGB(199, 199, 199)
+	a.Decay = Color3.fromRGB(106, 112, 125)
+	a.Glare = 0
+	a.Haze = 0
+elseif not lighting:FindFirstChild("Sky") then
+	local a = Instance.new("Sky", lighting)
+	a.MoonAngularSize = 11
+	a.MoonTextureId = "rbxassetid://6444320592"
+	a.SkyboxBk = "rbxassetid://6444884337"
+	a.SkyboxDn = "rbxassetid://6444884785"
+	a.SkyboxFt = "rbxassetid://6444884337"
+	a.SkyboxLf = "rbxassetid://6444884337"
+	a.SkyboxRt = "rbxassetid://6444884337"
+	a.SkyboxUp = "rbxassetid://6412503613"
+	a.StarCount = 3000
+	a.SunAngularSize = 11
+	a.SunTextureId = "rbxassetid://6196665106"
 elseif not lighting:FindFirstChild("Bloom") then
-	objectsFolder.MainMenuLighting.Bloom.Parent = lighting
+	local a = Instance.new("BloomEffect", lighting)
+	a.Intensity = 0.45
+	a.Size = 56
+	a.Threshold = 0.8
 elseif not lighting:FindFirstChild("Blur") then
-	objectsFolder.MainMenuLighting.Blur.Parent = lighting
+	local a = Instance.new("BlurEffect", lighting)
+	a.Size = 4
 elseif not lighting:FindFirstChild("ColorCorrection") then
-	objectsFolder.MainMenuLighting.ColorCorrection.Parent = lighting
+	local a = Instance.new("ColorCorrectionEffect", lighting)
+	a.Brightness = 0.1
+	a.Contrast = 0.2
+	a.Saturation = 0.3
+	a.TintColor = Color3.fromRGB(255, 205, 144)
 elseif not lighting:FindFirstChild("DepthOfField") then
-	objectsFolder.MainMenuLighting.DepthOfField.Parent = lighting
+	local a = Instance.new("DepthOfFieldEffect", lighting)
+	a.FarIntensity = 1
+	a.FocusDistance = 0
+	a.InFocusRadius = 30
+	a.NearIntensity = 0
 elseif not lighting:FindFirstChild("SunRays") then
-	objectsFolder.MainMenuLighting.SunRays.Parent = lighting
+	local a = Instance.new("SunRaysEffect", lighting)
+	a.Intensity = 0.01
+	a.Spread = 0.375
 end
 objectsFolder.MainMenuLighting:Destroy()
 
