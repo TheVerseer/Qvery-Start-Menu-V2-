@@ -1,5 +1,6 @@
 local mainFolder = game.Workspace.QveryStartMenu_V2
 local objectsFolder = mainFolder.Objects
+local lighting = game.Lighting
 
 warn("Loading Menu")
 
@@ -9,5 +10,19 @@ objectsFolder.MainMenuSpawnItems.Parent = game.Workspace
 objectsFolder.MainMenuServerScripts.Parent = game.ServerScriptService
 objectsFolder.MainMenuCharacterScripts.Parent = game.StarterPlayer.StarterCharacterScripts
 objectsFolder.MainMenuGui.Parent = game.StarterGui
+if not lighting:FindFirstChild("Atmosphere") then
+	objectsFolder.MainMenuLighting.Atmosphere.Parent = lighting
+elseif not lighting:FindFirstChild("Bloom") then
+	objectsFolder.MainMenuLighting.Bloom.Parent = lighting
+elseif not lighting:FindFirstChild("Blur") then
+	objectsFolder.MainMenuLighting.Blur.Parent = lighting
+elseif not lighting:FindFirstChild("ColorCorrection") then
+	objectsFolder.MainMenuLighting.ColorCorrection.Parent = lighting
+elseif not lighting:FindFirstChild("DepthOfField") then
+	objectsFolder.MainMenuLighting.DepthOfField.Parent = lighting
+elseif not lighting:FindFirstChild("SunRays") then
+	objectsFolder.MainMenuLighting.SunRays.Parent = lighting
+end
+objectsFolder.MainMenuLighting:Destroy()
 
-warn("Menu Loaded!") 
+warn("Menu Loaded!")
