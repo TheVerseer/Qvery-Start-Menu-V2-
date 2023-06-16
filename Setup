@@ -35,7 +35,7 @@ if not lighting:FindFirstChild("Sky") then
 end
 if not lighting:FindFirstChild("Bloom") then
 	local a = Instance.new("BloomEffect", lighting)
-	a.Intensity = 0.45
+	a.Intensity = 0.1
 	a.Size = 56
 	a.Threshold = 0.8
 end
